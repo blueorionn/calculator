@@ -7,7 +7,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
-      <header className="w-full h-max py-4 md:py-8 lg:py-12">
+      <header className="w-full h-max py-4 md:py-8 lg:py-12 px-2">
         <nav className="max-w-screen-2xl mx-auto flex gap-4 items-center">
           <Link href={"/"}>
             <Image
@@ -15,7 +15,7 @@ export default function Home() {
               alt="Website Logo"
               width={256}
               height={256}
-              className="h-6 w-6 md:h-8 md:w-8 lg:h-12 lg:w-12 aspect-auto"
+              className="h-8 w-8 lg:h-12 lg:w-12 aspect-auto"
             />
           </Link>
         </nav>
