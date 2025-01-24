@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export default function Page() {
   return (
     <>
-      <Header />
+      <Header headerMsg="Basic calculator" />
       <BasicCalculator />
       <Footer />
     </>

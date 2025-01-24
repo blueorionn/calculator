@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Space_Grotesk } from "next/font/google";
 
-export default function Header() {
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
+
+export default function Header({ headerMsg }: { headerMsg?: string }) {
   return (
     <>
       <header className="w-full h-max py-4 md:py-8 lg:py-12 px-2">
@@ -15,6 +18,11 @@ export default function Header() {
               className="h-8 w-8 lg:h-12 lg:w-12 aspect-auto"
             />
           </Link>
+          <h1
+            className={`${spaceGrotesk.className} mr-8 lg:mr-12 text-xl font-bold grow uppercase text-center text-gray-100`}
+          >
+            {headerMsg}
+          </h1>
         </nav>
       </header>
     </>
