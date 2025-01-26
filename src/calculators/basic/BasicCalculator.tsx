@@ -5,6 +5,7 @@ import {
   SubtractionButton,
   MultiplicationButton,
   DivisionButton,
+  PlusMinusButton,
 } from "@/components/buttons/OperatorButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -72,12 +73,7 @@ export default function BasicCalculator() {
                 <AdditionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-4 gap-2.5">
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>+-</span>
-                </button>
+                <PlusMinusButton />
                 <DigitButton digit={0} />
                 <button
                   type="button"
