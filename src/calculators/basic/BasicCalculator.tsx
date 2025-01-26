@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 export default function BasicCalculator() {
   return (
     <>
-      <main className="min-h-[100vh] w-full py-8 lg:py-12 xl:py-16 px-4">
+      <main className="min-h-[80vh] w-full py-8 lg:py-12 xl:py-16 px-4">
         <section className="max-w-screen-sm w-full mx-auto">
           <section className="h-full w-full rounded-sm">
             <div className="bg-gray-900">
