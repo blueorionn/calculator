@@ -55,7 +55,7 @@ export function EvaluateButton() {
     <>
       <button
         type="button"
-        className="bg-rose-500 flex justify-center items-center rounded-sm py-4 hover:bg-rose-600 transition-all duration-100"
+        className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
       >
         <span className={`${spaceGrotesk.className} text-2xl text-gray-100`}>
           =
