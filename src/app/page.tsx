@@ -51,8 +51,15 @@ export default function Home() {
           <div className="w-full my-4 md:my-6 lg:my-8 grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 md:gap-4 lg:gap-6">
             <Link
               href={"/basic"}
-              className="group w-full p-4 border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
+              className="group w-full p-4 flex gap-2.5 items-end border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                className="h-4 w-4 lg:h-6 lg:w-6 aspect-auto fill-gray-200"
+              >
+                <path d="M320-240h60v-80h80v-60h-80v-80h-60v80h-80v60h80v80Zm200-30h200v-60H520v60Zm0-100h200v-60H520v60Zm44-152 56-56 56 56 42-42-56-58 56-56-42-42-56 56-56-56-42 42 56 56-56 58 42 42Zm-314-70h200v-60H250v60Zm-50 472q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+              </svg>
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
@@ -61,8 +68,15 @@ export default function Home() {
             </Link>
             <Link
               href={"/scientific"}
-              className="group w-full p-4 border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
+              className="group w-full p-4 flex gap-2.5 items-end border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                className="h-4 w-4 lg:h-6 lg:w-6 aspect-auto fill-gray-200"
+              >
+                <path d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm0-80h560L520-492v-268h-80v268L200-200Zm280-280Z" />
+              </svg>
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
@@ -71,8 +85,15 @@ export default function Home() {
             </Link>
             <Link
               href={"/financial"}
-              className="group w-full p-4 border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
+              className="group w-full p-4 flex gap-2.5 items-end border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                className="h-4 w-4 lg:h-6 lg:w-6 aspect-auto fill-gray-200"
+              >
+                <path d="M320-414v-306h120v306l-60-56-60 56Zm200 60v-526h120v406L520-354ZM120-216v-344h120v224L120-216Zm0 98 258-258 142 122 224-224h-64v-80h200v200h-80v-64L524-146 382-268 232-118H120Z" />
+              </svg>
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
@@ -81,8 +102,15 @@ export default function Home() {
             </Link>
             <Link
               href={"/bmi"}
-              className="group w-full p-4 border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
+              className="group w-full p-4 flex gap-2.5 items-end border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                className="h-4 w-4 lg:h-6 lg:w-6 aspect-auto fill-gray-200"
+              >
+                <path d="M208-120q-37 0-62.5-25.5T120-208v-548q0-29 27-40.5t47 8.5l90 90-54 54 28 28 54-54 104 104-54 54 28 28 54-54 104 104-54 54 28 28 54-54 104 104-54 54 28 28 54-54 80 80q20 20 8.5 47T756-120H208Zm32-120h332L240-572v332Z" />
+              </svg>
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
