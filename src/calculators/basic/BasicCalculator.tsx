@@ -1,5 +1,11 @@
 import { Space_Grotesk } from "next/font/google";
 import { DigitButton } from "@/components/buttons/DigitButton";
+import {
+  AdditionButton,
+  SubtractionButton,
+  MultiplicationButton,
+  DivisionButton,
+} from "@/components/buttons/OperatorButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -45,45 +51,25 @@ export default function BasicCalculator() {
                 >
                   <span>B</span>
                 </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>D</span>
-                </button>
+                <DivisionButton />
               </div>
               <div aria-label="row_four" className="grid grid-cols-4 gap-2.5">
                 <DigitButton digit={7} />
                 <DigitButton digit={8} />
                 <DigitButton digit={9} />
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>x</span>
-                </button>
+                <MultiplicationButton />
               </div>
               <div aria-label="row_three" className="grid grid-cols-4 gap-2.5">
                 <DigitButton digit={4} />
                 <DigitButton digit={5} />
                 <DigitButton digit={6} />
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>-</span>
-                </button>
+                <SubtractionButton />
               </div>
               <div aria-label="row_two" className="grid grid-cols-4 gap-2.5">
                 <DigitButton digit={1} />
                 <DigitButton digit={2} />
                 <DigitButton digit={3} />
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>+</span>
-                </button>
+                <AdditionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-4 gap-2.5">
                 <button
