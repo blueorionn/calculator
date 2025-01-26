@@ -7,6 +7,11 @@ import {
   DivisionButton,
   PlusMinusButton,
 } from "@/components/buttons/OperatorButtons";
+import {
+  ClearAllButton,
+  ClearButton,
+  EvaluateButton
+} from "@/components/buttons/FunctionButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -34,18 +39,8 @@ export default function BasicCalculator() {
               className={`${spaceGrotesk.className} grid grid-rows-5 gap-2.5 mt-4`}
             >
               <div aria-label="row_five" className="grid grid-cols-4 gap-2.5">
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>AC</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>C</span>
-                </button>
+                <ClearAllButton />
+                <ClearButton />
                 <button
                   type="button"
                   className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
@@ -81,12 +76,7 @@ export default function BasicCalculator() {
                 >
                   <span>.</span>
                 </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>=</span>
-                </button>
+                <EvaluateButton />
               </div>
             </div>
           </section>
