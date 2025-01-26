@@ -86,7 +86,7 @@ export default function Home() {
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
-                bmi
+                length
               </span>
             </Link>
           </div>
