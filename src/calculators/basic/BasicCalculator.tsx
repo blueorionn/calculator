@@ -1,5 +1,5 @@
 import { Space_Grotesk } from "next/font/google";
-import { DigitButton } from "@/components/buttons/DigitButton";
+import { DigitButton, PeriodButton } from "@/components/buttons/DigitButton";
 import {
   AdditionButton,
   SubtractionButton,
@@ -10,7 +10,7 @@ import {
 import {
   ClearAllButton,
   ClearButton,
-  EvaluateButton
+  EvaluateButton,
 } from "@/components/buttons/FunctionButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -70,12 +70,7 @@ export default function BasicCalculator() {
               <div aria-label="row_one" className="grid grid-cols-4 gap-2.5">
                 <PlusMinusButton />
                 <DigitButton digit={0} />
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>.</span>
-                </button>
+                <PeriodButton />
                 <EvaluateButton />
               </div>
             </div>

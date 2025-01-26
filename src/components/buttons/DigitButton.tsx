@@ -19,3 +19,17 @@ export function DigitButton({
     </>
   );
 }
+
+export function PeriodButton() {
+  return (
+    <>
+      <button
+        type="button"
+        className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
+      >
+        <span className="sr-only">period</span>
+        <span className={`${spaceGrotesk.className}`}>.</span>
+      </button>
+    </>
+  );
+}
