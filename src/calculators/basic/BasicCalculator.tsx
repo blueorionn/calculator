@@ -1,4 +1,5 @@
 import { Space_Grotesk } from "next/font/google";
+import { DigitButton } from "@/components/buttons/DigitButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -52,24 +53,9 @@ export default function BasicCalculator() {
                 </button>
               </div>
               <div aria-label="row_four" className="grid grid-cols-4 gap-2.5">
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>7</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>8</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>9</span>
-                </button>
+                <DigitButton digit={7} />
+                <DigitButton digit={8} />
+                <DigitButton digit={9} />
                 <button
                   type="button"
                   className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
@@ -78,24 +64,9 @@ export default function BasicCalculator() {
                 </button>
               </div>
               <div aria-label="row_three" className="grid grid-cols-4 gap-2.5">
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>4</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>5</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>6</span>
-                </button>
+                <DigitButton digit={4} />
+                <DigitButton digit={5} />
+                <DigitButton digit={6} />
                 <button
                   type="button"
                   className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
@@ -104,24 +75,9 @@ export default function BasicCalculator() {
                 </button>
               </div>
               <div aria-label="row_two" className="grid grid-cols-4 gap-2.5">
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>1</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>2</span>
-                </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>3</span>
-                </button>
+                <DigitButton digit={1} />
+                <DigitButton digit={2} />
+                <DigitButton digit={3} />
                 <button
                   type="button"
                   className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
@@ -136,12 +92,7 @@ export default function BasicCalculator() {
                 >
                   <span>+-</span>
                 </button>
-                <button
-                  type="button"
-                  className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
-                >
-                  <span>0</span>
-                </button>
+                <DigitButton digit={0} />
                 <button
                   type="button"
                   className="bg-gray-800 flex justify-center items-center rounded-sm py-2.5"
