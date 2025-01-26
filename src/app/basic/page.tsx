@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import BasicCalculator from "@/calculators/basic/BasicCalculator";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer/Footer";
 
 export default function Page() {
   return (
