@@ -65,6 +65,18 @@ export function reducer(
     case "CLEAR_ALL":
       return INITIAL_STATE;
 
+    case "EVALUATE":
+      if (state.currentOperand === "0" && state.previousOperand === "0")
+        return state;
+      if (state.operation === null) return state;
+
+      return {
+        ...state,
+        previousOperand: "0",
+        currentOperand: evaluateOutput(state),
+        operation: null,
+      };
+
     default:
       return state;
   }

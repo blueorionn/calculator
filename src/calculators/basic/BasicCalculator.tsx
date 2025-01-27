@@ -75,7 +75,7 @@ export default function BasicCalculator() {
                 <PlusMinusButton />
                 <DigitButton digit={0} dispatch={dispatch} />
                 <PeriodButton dispatch={dispatch} />
-                <EvaluateButton />
+                <EvaluateButton dispatch={dispatch} />
               </div>
             </div>
           </section>
