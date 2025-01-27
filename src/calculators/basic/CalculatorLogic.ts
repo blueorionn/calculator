@@ -50,7 +50,7 @@ export function reducer(
       };
 
     case "PLUS_MINUS":
-      return { ...state, currentOperand: operatePlusMinus(state) };
+      return { ...state, currentOperand: `${operatePlusMinus(state)}` };
 
     case "DELETE":
       if (state.currentOperand === "0") return state;
