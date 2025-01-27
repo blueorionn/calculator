@@ -63,6 +63,9 @@ export function reducer(
       if (state.currentOperand === "0") return state;
       return { ...state, currentOperand: "0" };
 
+    case "CLEAR_ALL":
+      return INITIAL_STATE;
+
     default:
       return state;
   }

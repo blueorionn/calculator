@@ -48,7 +48,7 @@ export default function BasicCalculator() {
               className={`${spaceGrotesk.className} grid grid-rows-5 gap-2.5 mt-4`}
             >
               <div aria-label="row_five" className="grid grid-cols-4 gap-2.5">
-                <ClearAllButton />
+                <ClearAllButton dispatch={dispatch} />
                 <ClearButton dispatch={dispatch} />
                 <DeleteButton dispatch={dispatch} />
                 <DivisionButton dispatch={dispatch} />
