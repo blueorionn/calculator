@@ -37,7 +37,8 @@ export default function BasicCalculator() {
               </div>
               <div className="w-full p-4">
                 <span
-                  className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-lg font-bold`}
+                  className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-lg font-bold overflow-auto`}
+                  style={{ scrollbarWidth: "none" }}
                 >
                   {state.currentOperand}
                 </span>
