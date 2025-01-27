@@ -76,7 +76,7 @@ export function reducer(
       return {
         ...state,
         previousOperand: "0",
-        currentOperand: evaluateOutput(state),
+        currentOperand: `${evaluateOutput(state)}`,
         operation: null,
       };
 
