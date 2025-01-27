@@ -19,6 +19,9 @@ export function reducer(
         currentOperand: `${state.currentOperand}${action.payload}`,
       };
 
+    case "CLEAR":
+      return { ...state, currentOperand: "0" };
+
     default:
       return state;
   }

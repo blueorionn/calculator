@@ -49,7 +49,7 @@ export default function BasicCalculator() {
             >
               <div aria-label="row_five" className="grid grid-cols-4 gap-2.5">
                 <ClearAllButton />
-                <ClearButton />
+                <ClearButton dispatch={dispatch} />
                 <DeleteButton />
                 <DivisionButton />
               </div>

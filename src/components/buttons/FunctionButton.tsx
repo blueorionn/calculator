@@ -1,12 +1,19 @@
+import { ActionDispatch } from "react";
 import { Space_Grotesk } from "next/font/google";
+import { CalculatorActionType } from "@/calculators/basic/SharedTypes";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
-export function ClearButton() {
+export function ClearButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "CLEAR" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">clear</span>
