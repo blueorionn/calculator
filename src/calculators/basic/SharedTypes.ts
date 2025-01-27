@@ -4,8 +4,8 @@ export interface CalculatorState {
   operation: string | null;
 }
 
-export type CalculatorAction =
-  | { type: "ADD_DIGIT"; payload: string }
+export type CalculatorActionType =
+  | { type: "ADD_DIGIT"; payload: number }
   | { type: "ADD_PERIOD" }
   | { type: "CHOOSE_OPERATION"; payload: string }
   | { type: "CLEAR" }
