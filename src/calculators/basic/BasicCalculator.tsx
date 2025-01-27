@@ -50,7 +50,7 @@ export default function BasicCalculator() {
               <div aria-label="row_five" className="grid grid-cols-4 gap-2.5">
                 <ClearAllButton />
                 <ClearButton dispatch={dispatch} />
-                <DeleteButton />
+                <DeleteButton dispatch={dispatch} />
                 <DivisionButton />
               </div>
               <div aria-label="row_four" className="grid grid-cols-4 gap-2.5">
