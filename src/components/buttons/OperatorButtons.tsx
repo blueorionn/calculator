@@ -101,11 +101,16 @@ export function DivisionButton({
   );
 }
 
-export function PlusMinusButton() {
+export function PlusMinusButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "PLUS_MINUS" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className={`${spaceGrotesk.className} text-xl`}>&plusmn;</span>

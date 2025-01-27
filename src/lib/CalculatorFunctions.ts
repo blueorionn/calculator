@@ -5,3 +5,7 @@ export function evaluateOutput(state: CalculatorState) {
     `${state.previousOperand}${state.operation}${state.currentOperand}`
   );
 }
+
+export function operatePlusMinus(state: CalculatorState) {
+  return eval(`${state.currentOperand}*-1`);
+}

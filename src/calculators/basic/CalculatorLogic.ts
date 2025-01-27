@@ -1,5 +1,5 @@
 import { CalculatorState, CalculatorActionType } from "./SharedTypes";
-import { evaluateOutput } from "@/lib/CalculatorFunctions";
+import { evaluateOutput, operatePlusMinus } from "@/lib/CalculatorFunctions";
 
 export const INITIAL_STATE: CalculatorState = {
   currentOperand: "0",
@@ -48,6 +48,9 @@ export function reducer(
         currentOperand: "0",
         operation: action.payload,
       };
+
+    case "PLUS_MINUS":
+      return { ...state, currentOperand: operatePlusMinus(state) };
 
     case "DELETE":
       if (state.currentOperand === "0") return state;
