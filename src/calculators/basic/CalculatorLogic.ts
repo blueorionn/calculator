@@ -1,4 +1,5 @@
 import { CalculatorState, CalculatorActionType } from "./SharedTypes";
+import { evaluateOutput } from "@/lib/CalculatorFunctions";
 
 export const INITIAL_STATE: CalculatorState = {
   currentOperand: "0",
@@ -43,9 +44,7 @@ export function reducer(
 
       return {
         ...state,
-        previousOperand: eval(
-          `${state.previousOperand}${state.operation}${state.currentOperand}`
-        ),
+        previousOperand: evaluateOutput(state),
         currentOperand: "0",
         operation: action.payload,
       };
