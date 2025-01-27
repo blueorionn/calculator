@@ -32,11 +32,22 @@ export function DigitButton({
   );
 }
 
-export function PeriodButton() {
+export function PeriodButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
+  useEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === `.`) {
+      dispatch({ type: "ADD_PERIOD" });
+    }
+  });
+
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "ADD_PERIOD" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">period</span>

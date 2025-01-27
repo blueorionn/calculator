@@ -74,7 +74,7 @@ export default function BasicCalculator() {
               <div aria-label="row_one" className="grid grid-cols-4 gap-2.5">
                 <PlusMinusButton />
                 <DigitButton digit={0} dispatch={dispatch} />
-                <PeriodButton />
+                <PeriodButton dispatch={dispatch} />
                 <EvaluateButton />
               </div>
             </div>

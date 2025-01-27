@@ -19,7 +19,13 @@ export function reducer(
         currentOperand: `${state.currentOperand}${action.payload}`,
       };
 
+    case "ADD_PERIOD":
+      if (state.currentOperand === ".") return state;
+      if (state.currentOperand.includes(".")) return state;
+      return { ...state, currentOperand: `${state.currentOperand}.` };
+
     case "CLEAR":
+      if (state.currentOperand === "0") return state;
       return { ...state, currentOperand: "0" };
 
     default:
