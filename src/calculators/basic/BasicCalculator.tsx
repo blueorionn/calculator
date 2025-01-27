@@ -32,7 +32,7 @@ export default function BasicCalculator() {
                 <span
                   className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-base font-semibold mx-auto`}
                 >
-                  {state.previousOperand}
+                  {state.previousOperand} {state.operation}
                 </span>
               </div>
               <div className="w-full p-4">
@@ -51,25 +51,25 @@ export default function BasicCalculator() {
                 <ClearAllButton />
                 <ClearButton dispatch={dispatch} />
                 <DeleteButton dispatch={dispatch} />
-                <DivisionButton />
+                <DivisionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_four" className="grid grid-cols-4 gap-2.5">
                 <DigitButton digit={7} dispatch={dispatch} />
                 <DigitButton digit={8} dispatch={dispatch} />
                 <DigitButton digit={9} dispatch={dispatch} />
-                <MultiplicationButton />
+                <MultiplicationButton dispatch={dispatch} />
               </div>
               <div aria-label="row_three" className="grid grid-cols-4 gap-2.5">
                 <DigitButton digit={4} dispatch={dispatch} />
                 <DigitButton digit={5} dispatch={dispatch} />
                 <DigitButton digit={6} dispatch={dispatch} />
-                <SubtractionButton />
+                <SubtractionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_two" className="grid grid-cols-4 gap-2.5">
                 <DigitButton digit={1} dispatch={dispatch} />
                 <DigitButton digit={2} dispatch={dispatch} />
                 <DigitButton digit={3} dispatch={dispatch} />
-                <AdditionButton />
+                <AdditionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-4 gap-2.5">
                 <PlusMinusButton />

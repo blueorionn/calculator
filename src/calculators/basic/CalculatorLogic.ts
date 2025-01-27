@@ -24,6 +24,32 @@ export function reducer(
       if (state.currentOperand.includes(".")) return state;
       return { ...state, currentOperand: `${state.currentOperand}.` };
 
+    case "CHOOSE_OPERATION":
+      if (state.currentOperand === "0" && state.previousOperand === "0")
+        return state;
+
+      if (state.previousOperand === "0") {
+        return {
+          ...state,
+          operation: `${action.payload}`,
+          previousOperand: state.currentOperand,
+          currentOperand: "0",
+        };
+      }
+
+      if (state.currentOperand === "0") {
+        return { ...state, operation: `${action.payload}` };
+      }
+
+      return {
+        ...state,
+        previousOperand: eval(
+          `${state.previousOperand}${state.operation}${state.currentOperand}`
+        ),
+        currentOperand: "0",
+        operation: action.payload,
+      };
+
     case "DELETE":
       if (state.currentOperand === "0") return state;
       if (state.currentOperand.length === 1)
