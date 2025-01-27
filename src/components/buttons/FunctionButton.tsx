@@ -30,14 +30,14 @@ export function ClearAllButton() {
   );
 }
 
-export function BackSpaceButton() {
+export function DeleteButton() {
   return (
     <>
       <button
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
-        <span className="sr-only">Backspace button</span>
+        <span className="sr-only">Delete button</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 -960 960 960"

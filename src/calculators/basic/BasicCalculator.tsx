@@ -11,7 +11,7 @@ import {
   ClearAllButton,
   ClearButton,
   EvaluateButton,
-  BackSpaceButton,
+  DeleteButton,
 } from "@/components/buttons/FunctionButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -42,7 +42,7 @@ export default function BasicCalculator() {
               <div aria-label="row_five" className="grid grid-cols-4 gap-2.5">
                 <ClearAllButton />
                 <ClearButton />
-                <BackSpaceButton />
+                <DeleteButton />
                 <DivisionButton />
               </div>
               <div aria-label="row_four" className="grid grid-cols-4 gap-2.5">
