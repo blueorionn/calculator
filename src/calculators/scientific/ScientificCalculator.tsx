@@ -2,7 +2,7 @@ import { Space_Grotesk, Roboto } from "next/font/google";
 import { DigitButton } from "./components/DigitButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-const lato = Roboto({ subsets: ["latin"], weight: "400" });
+const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export default function ScientificCalculator() {
   return (
@@ -41,10 +41,10 @@ export default function ScientificCalculator() {
                 <button type="button">MOD</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button" className={`${lato.className}`}>
+                <button type="button" className={`${roboto.className}`}>
                   &pi;
                 </button>
-                <button type="button" className={`${lato.className}`}>
+                <button type="button" className={`${roboto.className}`}>
                   e
                 </button>
                 <button type="button">&radic;x</button>
@@ -56,10 +56,10 @@ export default function ScientificCalculator() {
                 </button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button" className={`${lato.className}`}>
+                <button type="button" className={`${roboto.className}`}>
                   {"("}
                 </button>
-                <button type="button" className={`${lato.className}`}>
+                <button type="button" className={`${roboto.className}`}>
                   {")"}
                 </button>
                 <button type="button">AC</button>
