@@ -2,20 +2,23 @@
 import { useReducer } from "react";
 import { Space_Grotesk } from "next/font/google";
 import { INITIAL_STATE, reducer } from "./CalculatorLogic";
-import { DigitButton, PeriodButton } from "@/components/buttons/DigitButton";
+import {
+  DigitButton,
+  PeriodButton,
+} from "@/calculators/basic/components/DigitButton";
 import {
   AdditionButton,
   SubtractionButton,
   MultiplicationButton,
   DivisionButton,
   PlusMinusButton,
-} from "@/components/buttons/OperatorButtons";
+} from "@/calculators/basic/components/OperatorButtons";
 import {
   ClearAllButton,
   ClearButton,
   EvaluateButton,
   DeleteButton,
-} from "@/components/buttons/FunctionButton";
+} from "@/calculators/basic/components/FunctionButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
