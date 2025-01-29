@@ -1,5 +1,5 @@
 import { Space_Grotesk, Roboto } from "next/font/google";
-import { DigitButton } from "./components/DigitButton";
+import { DigitButton, PeriodButton } from "./components/DigitButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
@@ -91,7 +91,7 @@ export default function ScientificCalculator() {
                 <button type="button">lg</button>
                 <button type="button">%</button>
                 <DigitButton digit={0} />
-                <button type="button">.</button>
+                <PeriodButton />
                 <button type="button">=</button>
               </div>
             </div>
