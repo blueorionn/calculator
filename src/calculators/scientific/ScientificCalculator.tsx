@@ -5,6 +5,14 @@ import {
   SubtractionButton,
   MultiplicationButton,
   DivisionButton,
+  FactorialButton,
+  LogButton,
+  NaturalLogButton,
+  ReciprocalButton,
+  ModuloButton,
+  SquareButton,
+  CubeButton,
+  SquareRootButton,
 } from "./components/OperatorButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -53,13 +61,9 @@ export default function ScientificCalculator() {
                 <button type="button" className={`${roboto.className}`}>
                   e
                 </button>
-                <button type="button">&radic;x</button>
-                <button type="button">
-                  x<sup>2</sup>
-                </button>
-                <button type="button">
-                  x<sup>3</sup>
-                </button>
+                <SquareRootButton />
+                <SquareButton />
+                <CubeButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button" className={`${roboto.className}`}>
@@ -73,29 +77,29 @@ export default function ScientificCalculator() {
                 <DivisionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button">1/x</button>
+                <ReciprocalButton />
                 <DigitButton digit={7} />
                 <DigitButton digit={8} />
                 <DigitButton digit={9} />
                 <MultiplicationButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button">n!</button>
+                <FactorialButton />
                 <DigitButton digit={4} />
                 <DigitButton digit={5} />
                 <DigitButton digit={6} />
                 <SubtractionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button">ln</button>
+                <NaturalLogButton />
                 <DigitButton digit={1} />
                 <DigitButton digit={2} />
                 <DigitButton digit={3} />
                 <AdditionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button">lg</button>
-                <button type="button">%</button>
+                <LogButton />
+                <ModuloButton />
                 <DigitButton digit={0} />
                 <PeriodButton />
                 <button type="button">=</button>
