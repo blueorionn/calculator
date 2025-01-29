@@ -53,16 +53,3 @@ export function DivisionButton() {
     </>
   );
 }
-
-export function PlusMinusButton() {
-  return (
-    <>
-      <button
-        type="button"
-        className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
-      >
-        <span className={`${spaceGrotesk.className} text-xl`}>&plusmn;</span>
-      </button>
-    </>
-  );
-}
