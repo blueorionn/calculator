@@ -1,4 +1,5 @@
 import { Space_Grotesk, Roboto } from "next/font/google";
+import { DigitButton } from "./components/DigitButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const lato = Roboto({ subsets: ["latin"], weight: "400" });
@@ -67,29 +68,29 @@ export default function ScientificCalculator() {
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">1/x</button>
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
+                <DigitButton digit={7} />
+                <DigitButton digit={8} />
+                <DigitButton digit={9} />
                 <button type="button">&times;</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">n!</button>
-                <button type="button">4</button>
-                <button type="button">5</button>
-                <button type="button">6</button>
+                <DigitButton digit={4} />
+                <DigitButton digit={5} />
+                <DigitButton digit={6} />
                 <button type="button">-</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">ln</button>
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
+                <DigitButton digit={1} />
+                <DigitButton digit={2} />
+                <DigitButton digit={3} />
                 <button type="button">+</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">lg</button>
                 <button type="button">%</button>
-                <button type="button">0</button>
+                <DigitButton digit={0} />
                 <button type="button">.</button>
                 <button type="button">=</button>
               </div>
