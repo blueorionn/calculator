@@ -1,5 +1,11 @@
 import { Space_Grotesk, Roboto } from "next/font/google";
 import { DigitButton, PeriodButton } from "./components/DigitButton";
+import {
+  AdditionButton,
+  SubtractionButton,
+  MultiplicationButton,
+  DivisionButton,
+} from "./components/OperatorButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
@@ -64,28 +70,28 @@ export default function ScientificCalculator() {
                 </button>
                 <button type="button">AC</button>
                 <button type="button">B</button>
-                <button type="button">&divide;</button>
+                <DivisionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">1/x</button>
                 <DigitButton digit={7} />
                 <DigitButton digit={8} />
                 <DigitButton digit={9} />
-                <button type="button">&times;</button>
+                <MultiplicationButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">n!</button>
                 <DigitButton digit={4} />
                 <DigitButton digit={5} />
                 <DigitButton digit={6} />
-                <button type="button">-</button>
+                <SubtractionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">ln</button>
                 <DigitButton digit={1} />
                 <DigitButton digit={2} />
                 <DigitButton digit={3} />
-                <button type="button">+</button>
+                <AdditionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <button type="button">lg</button>
