@@ -14,6 +14,11 @@ import {
   CubeButton,
   SquareRootButton,
 } from "./components/OperatorButtons";
+import {
+  EvaluateButton,
+  ClearAllButton,
+  DeleteButton,
+} from "./components/FunctionButton";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
@@ -72,8 +77,8 @@ export default function ScientificCalculator() {
                 <button type="button" className={`${roboto.className}`}>
                   {")"}
                 </button>
-                <button type="button">AC</button>
-                <button type="button">B</button>
+                <ClearAllButton />
+                <DeleteButton />
                 <DivisionButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
@@ -102,7 +107,7 @@ export default function ScientificCalculator() {
                 <ModuloButton />
                 <DigitButton digit={0} />
                 <PeriodButton />
-                <button type="button">=</button>
+                <EvaluateButton />
               </div>
             </div>
           </section>
