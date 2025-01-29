@@ -1,4 +1,4 @@
-import { Space_Grotesk, Roboto } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { DigitButton, PeriodButton } from "./components/DigitButton";
 import {
   AdditionButton,
@@ -19,9 +19,14 @@ import {
   ClearAllButton,
   DeleteButton,
 } from "./components/FunctionButton";
+import {
+  PiButton,
+  EulerButton,
+  ParenthesisLeft,
+  ParenthesisRight,
+} from "./components/ConstantButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export default function ScientificCalculator() {
   return (
@@ -60,23 +65,15 @@ export default function ScientificCalculator() {
                 <button type="button">MOD</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button" className={`${roboto.className}`}>
-                  &pi;
-                </button>
-                <button type="button" className={`${roboto.className}`}>
-                  e
-                </button>
+                <PiButton />
+                <EulerButton />
                 <SquareRootButton />
                 <SquareButton />
                 <CubeButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button" className={`${roboto.className}`}>
-                  {"("}
-                </button>
-                <button type="button" className={`${roboto.className}`}>
-                  {")"}
-                </button>
+                <ParenthesisLeft />
+                <ParenthesisRight />
                 <ClearAllButton />
                 <DeleteButton />
                 <DivisionButton />
