@@ -9,7 +9,7 @@ export interface CalculatorState {
 export type CalculatorActionType =
   | { type: "ADD_DIGIT"; payload: number }
   | { type: "ADD_PERIOD" }
-  | { type: "CHOOSE_OPERATION"; payload: string }
+  | { type: "CHOOSE_OPERATION"; payload: "+" | "-" | "*" | "/" }
   | { type: "MODULO" }
   | { type: "CLEAR_ALL" }
   | { type: "DELETE" }
