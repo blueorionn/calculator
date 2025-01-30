@@ -1,5 +1,6 @@
 import { ActionDispatch } from "react";
 import { Space_Grotesk } from "next/font/google";
+import { useEventListener } from "@/hooks/useEventListener";
 import { CalculatorActionType } from "../SharedTypes";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -43,6 +44,12 @@ export function DeleteButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
+  useEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === `Backspace` || event.key === "Delete") {
+      dispatch({ type: "DELETE" });
+    }
+  });
+
   return (
     <>
       <button
