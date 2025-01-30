@@ -19,11 +19,16 @@ export function EvaluateButton() {
   );
 }
 
-export function ClearAllButton() {
+export function ClearAllButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "CLEAR_ALL" })}
         className="bg-gray-700 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">clear all</span>

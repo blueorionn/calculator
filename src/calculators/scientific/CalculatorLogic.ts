@@ -35,6 +35,9 @@ export function reducer(
         currentOperand: `${state.currentOperand.slice(0, -1)}`,
       };
 
+    case "CLEAR_ALL":
+      return INITIAL_STATE;
+
     default:
       return state;
   }

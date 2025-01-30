@@ -83,7 +83,7 @@ export default function ScientificCalculator() {
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <ParenthesisLeft />
                 <ParenthesisRight />
-                <ClearAllButton />
+                <ClearAllButton dispatch={dispatch} />
                 <DeleteButton dispatch={dispatch} />
                 <DivisionButton />
               </div>
