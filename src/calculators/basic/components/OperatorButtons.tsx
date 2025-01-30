@@ -1,6 +1,6 @@
 import { ActionDispatch } from "react";
 import { Space_Grotesk } from "next/font/google";
-import { useEventListener } from "@/hooks/useEventListener";
+import { useCalculatorKeyboard } from "../hooks/useCalculatorKeyboard";
 import { CalculatorActionType } from "@/calculators/basic/SharedTypes";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -10,10 +10,9 @@ export function AdditionButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `+`) {
-      dispatch({ type: "CHOOSE_OPERATION", payload: "+" });
-    }
+  useCalculatorKeyboard("+", dispatch, {
+    type: "CHOOSE_OPERATION",
+    payload: "+",
   });
 
   return (
@@ -35,10 +34,9 @@ export function SubtractionButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `-`) {
-      dispatch({ type: "CHOOSE_OPERATION", payload: "-" });
-    }
+  useCalculatorKeyboard("+", dispatch, {
+    type: "CHOOSE_OPERATION",
+    payload: "-",
   });
 
   return (
@@ -60,10 +58,9 @@ export function MultiplicationButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `*`) {
-      dispatch({ type: "CHOOSE_OPERATION", payload: "*" });
-    }
+  useCalculatorKeyboard("+", dispatch, {
+    type: "CHOOSE_OPERATION",
+    payload: "*",
   });
 
   return (
@@ -85,10 +82,9 @@ export function DivisionButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `/`) {
-      dispatch({ type: "CHOOSE_OPERATION", payload: "/" });
-    }
+  useCalculatorKeyboard("+", dispatch, {
+    type: "CHOOSE_OPERATION",
+    payload: "/",
   });
 
   return (
