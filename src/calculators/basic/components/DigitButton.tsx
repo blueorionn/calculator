@@ -1,6 +1,6 @@
 import { ActionDispatch } from "react";
 import { Space_Grotesk } from "next/font/google";
-import { useEventListener } from "@/hooks/useEventListener";
+import { useCalculatorKeyboard } from "../hooks/useCalculatorKeyboard";
 import { CalculatorActionType } from "@/calculators/basic/SharedTypes";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -12,10 +12,9 @@ export function DigitButton({
   digit: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `${digit}`) {
-      dispatch({ type: "ADD_DIGIT", payload: digit });
-    }
+  useCalculatorKeyboard(`${digit}`, dispatch, {
+    type: "ADD_DIGIT",
+    payload: digit,
   });
 
   return (
@@ -37,10 +36,8 @@ export function PeriodButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `.`) {
-      dispatch({ type: "ADD_PERIOD" });
-    }
+  useCalculatorKeyboard(".", dispatch, {
+    type: "ADD_PERIOD",
   });
 
   return (
