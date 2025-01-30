@@ -112,7 +112,7 @@ export default function ScientificCalculator() {
                 <LogButton />
                 <ModuloButton />
                 <DigitButton digit={0} dispatch={dispatch} />
-                <PeriodButton />
+                <PeriodButton dispatch={dispatch} />
                 <EvaluateButton />
               </div>
             </div>
