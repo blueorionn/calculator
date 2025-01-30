@@ -9,6 +9,7 @@ export function AdditionButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Addition</span>
         <span className={`${spaceGrotesk.className} text-xl`}>+</span>
       </button>
     </>
@@ -22,6 +23,7 @@ export function SubtractionButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Subtraction</span>
         <span className={`${spaceGrotesk.className} text-xl`}>-</span>
       </button>
     </>
@@ -35,6 +37,7 @@ export function MultiplicationButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Multiplication</span>
         <span className={`${spaceGrotesk.className} text-xl`}>&times;</span>
       </button>
     </>
@@ -48,6 +51,7 @@ export function DivisionButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Division</span>
         <span className={`${spaceGrotesk.className} text-xl`}>&divide;</span>
       </button>
     </>
@@ -61,6 +65,7 @@ export function FactorialButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Factorial</span>
         <span className={`${spaceGrotesk.className}`}>n!</span>
       </button>
     </>
@@ -74,6 +79,7 @@ export function NaturalLogButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Natural Log</span>
         <span className={`${spaceGrotesk.className}`}>ln</span>
       </button>
     </>
@@ -100,6 +106,7 @@ export function ReciprocalButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Reciprocal</span>
         <span className={`${spaceGrotesk.className}`}>
           <sup>1</sup>&frasl;<sub>x</sub>
         </span>
@@ -115,6 +122,7 @@ export function ModuloButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Modulo</span>
         <span className={`${spaceGrotesk.className}`}>%</span>
       </button>
     </>
@@ -128,6 +136,7 @@ export function SquareButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Square</span>
         <span className={`${spaceGrotesk.className}`}>
           x<sup>2</sup>
         </span>
@@ -143,6 +152,7 @@ export function CubeButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Cube</span>
         <span className={`${spaceGrotesk.className}`}>
           x<sup>3</sup>
         </span>
@@ -158,6 +168,7 @@ export function SquareRootButton() {
         type="button"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
+        <span className="sr-only">Square Root</span>
         <span className={`${spaceGrotesk.className}`}>&radic;x</span>
       </button>
     </>
