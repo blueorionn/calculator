@@ -91,6 +91,7 @@ export function EvaluateButton({
         onClick={() => dispatch({ type: "EVALUATE" })}
         className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
       >
+        <span className="sr-only">Evaluate</span>
         <span className={`${spaceGrotesk.className} text-2xl text-gray-100`}>
           =
         </span>
