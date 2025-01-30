@@ -1,6 +1,6 @@
 import { ActionDispatch } from "react";
 import { Space_Grotesk } from "next/font/google";
-import { useEventListener } from "@/hooks/useEventListener";
+import { useCalculatorKeyboard } from "../hooks/useCalculatorKeyboard";
 import { CalculatorActionType } from "@/calculators/basic/SharedTypes";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -48,11 +48,7 @@ export function DeleteButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `Backspace` || event.key === "Delete") {
-      dispatch({ type: "DELETE" });
-    }
-  });
+  useCalculatorKeyboard("Backspace", dispatch, { type: "DELETE" });
 
   return (
     <>
@@ -79,11 +75,8 @@ export function EvaluateButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useEventListener("keydown", (event: KeyboardEvent) => {
-    if (event.key === `Enter`) {
-      dispatch({ type: "EVALUATE" });
-    }
-  });
+  useCalculatorKeyboard("Backspace", dispatch, { type: "EVALUATE" });
+
   return (
     <>
       <button
