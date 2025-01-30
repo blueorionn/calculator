@@ -1,4 +1,6 @@
+import { ActionDispatch } from "react";
 import { Space_Grotesk } from "next/font/google";
+import { CalculatorActionType } from "../SharedTypes";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -31,11 +33,16 @@ export function ClearAllButton() {
   );
 }
 
-export function DeleteButton() {
+export function DeleteButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "DELETE" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Delete button</span>

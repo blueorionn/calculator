@@ -26,6 +26,15 @@ export function reducer(
       if (state.currentOperand.includes(".")) return state;
       return { ...state, currentOperand: `${state.currentOperand}.` };
 
+    case "DELETE":
+      if (state.currentOperand === "0") return state;
+      if (state.currentOperand.length === 1)
+        return { ...state, currentOperand: "0" };
+      return {
+        ...state,
+        currentOperand: `${state.currentOperand.slice(0, -1)}`,
+      };
+
     default:
       return state;
   }
