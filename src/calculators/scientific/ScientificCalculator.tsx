@@ -1,4 +1,7 @@
+"use client";
+import { useReducer } from "react";
 import { Space_Grotesk } from "next/font/google";
+import { reducer, INITIAL_STATE } from "./CalculatorLogic";
 import { DigitButton, PeriodButton } from "./components/DigitButton";
 import {
   AdditionButton,
@@ -29,6 +32,8 @@ import {
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export default function ScientificCalculator() {
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+
   return (
     <>
       <main className="min-h-[80vh] w-full py-8 lg:py-12 xl:py-16 px-4">
@@ -38,13 +43,17 @@ export default function ScientificCalculator() {
               <div className="w-full p-2.5">
                 <span
                   className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-base font-semibold mx-auto`}
-                ></span>
+                >
+                  {state.previousOperand} {state.operation}
+                </span>
               </div>
               <div className="w-full p-4">
                 <span
                   className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-lg font-bold overflow-auto`}
                   style={{ scrollbarWidth: "none" }}
-                ></span>
+                >
+                  {state.currentOperand}
+                </span>
               </div>
             </div>
             <div
