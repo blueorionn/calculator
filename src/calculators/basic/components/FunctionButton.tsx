@@ -75,7 +75,7 @@ export function EvaluateButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useCalculatorKeyboard("Backspace", dispatch, { type: "EVALUATE" });
+  useCalculatorKeyboard("Enter", dispatch, { type: "EVALUATE" });
 
   return (
     <>
