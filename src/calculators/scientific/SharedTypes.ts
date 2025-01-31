@@ -11,7 +11,7 @@ export type CalculatorActionType =
   | { type: "ADD_DIGIT"; payload: number }
   | { type: "ADD_PERIOD" }
   | { type: "CHOOSE_OPERATION"; payload: "+" | "-" | "*" | "/" }
-  | { type: "ADD_CONSTANT" }
+  | { type: "ADD_CONSTANT"; payload: "e" | "pi" }
   | { type: "MODULO" }
   | { type: "CLEAR_ALL" }
   | { type: "DELETE" }

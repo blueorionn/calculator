@@ -52,6 +52,16 @@ export function reducer(
 
       return evaluateOperationOutput(state, action.payload);
 
+    case "ADD_CONSTANT":
+      if (action.payload === "e" && state.currentOperand === "0") {
+        return { ...state, currentOperand: `${Math.E}` };
+      }
+      if (action.payload === "pi" && state.currentOperand === "0") {
+        return { ...state, currentOperand: `${Math.PI}` };
+      }
+
+      return state;
+
     case "DELETE":
       // If currentOperand is already 0 return state
       if (state.currentOperand === "0") return state;

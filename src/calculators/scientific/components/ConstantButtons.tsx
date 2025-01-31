@@ -1,4 +1,6 @@
+import { ActionDispatch } from "react";
 import { Roboto } from "next/font/google";
+import { CalculatorActionType } from "../SharedTypes";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
@@ -30,11 +32,16 @@ export function ParenthesisLeft() {
   );
 }
 
-export function PiButton() {
+export function PiButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "ADD_CONSTANT", payload: "pi" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Pi</span>
@@ -44,11 +51,16 @@ export function PiButton() {
   );
 }
 
-export function EulerButton() {
+export function EulerButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "ADD_CONSTANT", payload: "e" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Euler{"'"}s number</span>
