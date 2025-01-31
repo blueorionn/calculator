@@ -4,6 +4,7 @@ export interface CalculatorState {
   operation: string | null;
   memory: string;
   angle: "deg" | "rad";
+  error: boolean;
 }
 
 export type CalculatorActionType =

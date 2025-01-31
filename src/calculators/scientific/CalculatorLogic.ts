@@ -6,6 +6,7 @@ export const INITIAL_STATE: CalculatorState = {
   operation: null,
   memory: "0",
   angle: "deg",
+  error: false,
 };
 
 export function reducer(
