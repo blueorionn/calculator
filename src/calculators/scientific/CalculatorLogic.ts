@@ -14,20 +14,28 @@ export function reducer(
 ): CalculatorState {
   switch (action.type) {
     case "ADD_DIGIT":
+      // If currentOperand is 0 replace it with payload
       if (state.currentOperand === "0")
         return { ...state, currentOperand: `${action.payload}` };
+
+      // If currentOperand isn't 0 append it with payload
       return {
         ...state,
         currentOperand: `${state.currentOperand}${action.payload}`,
       };
 
     case "ADD_PERIOD":
+      // If currentOperand has period don't include another.
       if (state.currentOperand === ".") return state;
+
       if (state.currentOperand.includes(".")) return state;
       return { ...state, currentOperand: `${state.currentOperand}.` };
 
     case "DELETE":
+      // If currentOperand is already 0 return state
       if (state.currentOperand === "0") return state;
+
+      // If currentOperand has only last digit left make it 0.
       if (state.currentOperand.length === 1)
         return { ...state, currentOperand: "0" };
       return {
