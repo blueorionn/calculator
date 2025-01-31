@@ -85,28 +85,28 @@ export default function ScientificCalculator() {
                 <ParenthesisRight />
                 <ClearAllButton dispatch={dispatch} />
                 <DeleteButton dispatch={dispatch} />
-                <DivisionButton />
+                <DivisionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <ReciprocalButton />
                 <DigitButton digit={7} dispatch={dispatch} />
                 <DigitButton digit={8} dispatch={dispatch} />
                 <DigitButton digit={9} dispatch={dispatch} />
-                <MultiplicationButton />
+                <MultiplicationButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <FactorialButton />
                 <DigitButton digit={4} dispatch={dispatch} />
                 <DigitButton digit={5} dispatch={dispatch} />
                 <DigitButton digit={6} dispatch={dispatch} />
-                <SubtractionButton />
+                <SubtractionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <NaturalLogButton />
                 <DigitButton digit={1} dispatch={dispatch} />
                 <DigitButton digit={2} dispatch={dispatch} />
                 <DigitButton digit={3} dispatch={dispatch} />
-                <AdditionButton />
+                <AdditionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <LogButton />
