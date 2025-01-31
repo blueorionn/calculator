@@ -1,4 +1,5 @@
 import { CalculatorState, CalculatorActionType } from "./SharedTypes";
+import { evaluateOperationOutput } from "./lib/CalculatorFunction";
 
 export const INITIAL_STATE: CalculatorState = {
   currentOperand: "0",
@@ -6,7 +7,7 @@ export const INITIAL_STATE: CalculatorState = {
   operation: null,
   memory: "0",
   angle: "deg",
-  error: false,
+  isError: false,
 };
 
 export function reducer(
@@ -49,7 +50,7 @@ export function reducer(
         return { ...state, operation: `${action.payload}` };
       }
 
-      return state;
+      return evaluateOperationOutput(state, action.payload);
 
     case "DELETE":
       // If currentOperand is already 0 return state

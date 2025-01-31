@@ -1,4 +1,4 @@
-import { CalculatorState } from "@/calculators/basic/SharedTypes";
+import { CalculatorState } from "../SharedTypes";
 
 export function evaluateOutput(state: CalculatorState) {
   try {
@@ -7,5 +7,24 @@ export function evaluateOutput(state: CalculatorState) {
     );
   } catch (error) {
     throw error;
+  }
+}
+
+export function evaluateOperationOutput(
+  state: CalculatorState,
+  actionPayload: string
+): CalculatorState {
+  const evaluatedOutput = evaluateOutput(state);
+
+  if (typeof evaluatedOutput === "number") {
+    return {
+      ...state,
+      previousOperand: evaluateOutput(state),
+      currentOperand: "0",
+      operation: `${actionPayload}`,
+      isError: false,
+    };
+  } else {
+    return { ...state, isError: true };
   }
 }
