@@ -52,6 +52,11 @@ export function reducer(
 
       return evaluateOperationOutput(state, action.payload);
 
+    case "INSTANT_OPERATION":
+      if (state.currentOperand === "0") return state;
+
+      return state;
+
     case "ADD_CONSTANT":
       if (action.payload === "e" && state.currentOperand === "0") {
         return { ...state, currentOperand: `${Math.E}` };
