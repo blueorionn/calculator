@@ -55,6 +55,12 @@ export function reducer(
     case "INSTANT_OPERATION":
       if (state.currentOperand === "0") return state;
 
+      if (action.payload === "square") {
+        return {
+          ...state,
+          currentOperand: `${eval(`(${state.currentOperand})**2`)}`,
+        };
+      }
       return state;
 
     case "ADD_CONSTANT":

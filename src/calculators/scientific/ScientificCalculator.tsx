@@ -77,7 +77,7 @@ export default function ScientificCalculator() {
                 <PiButton dispatch={dispatch} />
                 <EulerButton dispatch={dispatch} />
                 <SquareRootButton />
-                <SquareButton />
+                <SquareButton dispatch={dispatch} />
                 <CubeButton />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
