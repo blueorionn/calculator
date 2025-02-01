@@ -61,6 +61,13 @@ export function reducer(
           currentOperand: `${eval(`(${state.currentOperand})**2`)}`,
         };
       }
+      if (action.payload === "cube") {
+        return {
+          ...state,
+          currentOperand: `${eval(`(${state.currentOperand})**3`)}`,
+        };
+      }
+
       return state;
 
     case "ADD_CONSTANT":
