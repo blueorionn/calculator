@@ -62,9 +62,8 @@ export function reducer(
 
       return state;
 
-    case "TOGGLE_ANGLE":
-      if (state.angle === "deg") return { ...state, angle: "rad" };
-      if (state.angle === "rad") return { ...state, angle: "deg" };
+    case "SET_ANGLE":
+      return { ...state, angle: action.payload };
 
     case "DELETE":
       // If currentOperand is already 0 return state

@@ -13,7 +13,7 @@ export type CalculatorActionType =
   | { type: "CHOOSE_OPERATION"; payload: "+" | "-" | "*" | "/" }
   | { type: "ADD_CONSTANT"; payload: "e" | "pi" }
   | { type: "MODULO" }
-  | { type: "TOGGLE_ANGLE" }
+  | { type: "SET_ANGLE"; payload: "rad" | "deg" }
   | { type: "CLEAR_ALL" }
   | { type: "DELETE" }
   | { type: "EVALUATE" };
