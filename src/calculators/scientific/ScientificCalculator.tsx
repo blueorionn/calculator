@@ -28,6 +28,7 @@ import {
   ParenthesisLeft,
   ParenthesisRight,
 } from "./components/ConstantButtons";
+import { AngleButton } from "./components/TrigButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -60,8 +61,7 @@ export default function ScientificCalculator() {
               className={`${spaceGrotesk.className} grid grid-rows-5 gap-2.5 mt-4`}
             >
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button">RAD</button>
-                <button type="button">DEG</button>
+                <AngleButton state={state} dispatch={dispatch} />
                 <button type="button">M+</button>
                 <button type="button">M-</button>
                 <button type="button">MC</button>
