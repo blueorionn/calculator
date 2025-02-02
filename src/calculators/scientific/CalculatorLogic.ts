@@ -60,7 +60,7 @@ export function reducer(
 
       if (action.payload === "square") {
         // If currentOperand is not a valid number
-        if (isCurrentOperandValidNumber(state))
+        if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
 
         return {
@@ -70,7 +70,7 @@ export function reducer(
       }
       if (action.payload === "cube") {
         // If currentOperand is not a valid number
-        if (isCurrentOperandValidNumber(state))
+        if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
 
         return {
@@ -80,7 +80,7 @@ export function reducer(
       }
       if (action.payload === "root") {
         // If currentOperand is not a valid number
-        if (isCurrentOperandValidNumber(state))
+        if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
 
         return {
