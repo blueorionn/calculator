@@ -110,7 +110,7 @@ export default function ScientificCalculator() {
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <LogButton />
-                <ModuloButton />
+                <ModuloButton dispatch={dispatch} />
                 <DigitButton digit={0} dispatch={dispatch} />
                 <PeriodButton dispatch={dispatch} />
                 <EvaluateButton />

@@ -158,11 +158,21 @@ export function ReciprocalButton() {
   );
 }
 
-export function ModuloButton() {
+export function ModuloButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
+  useCalculatorKeyboard("%", dispatch, {
+    type: "CHOOSE_OPERATION",
+    payload: "%",
+  });
+
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "CHOOSE_OPERATION", payload: "%" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Modulo</span>
