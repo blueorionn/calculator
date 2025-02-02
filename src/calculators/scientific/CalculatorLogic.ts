@@ -2,6 +2,7 @@ import { CalculatorState, CalculatorActionType } from "./SharedTypes";
 import {
   evaluateOperationOutput,
   isCurrentOperandValidNumber,
+  factOperation,
 } from "./lib/CalculatorFunction";
 
 export const INITIAL_STATE: CalculatorState = {
@@ -87,6 +88,19 @@ export function reducer(
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**(1/2)`)}`,
         };
+      }
+      if (action.payload === "factorial") {
+        // If currentOperand is not a valid number
+        if (!isCurrentOperandValidNumber(state))
+          return { ...state, isError: true };
+
+        // factorial output
+        const factOutput = factOperation(state);
+
+        // if null
+        if (factOutput === null) return { ...state, isError: true };
+        if (typeof factOutput === "number")
+          return { ...state, currentOperand: `${factOutput}` };
       }
 
       return state;

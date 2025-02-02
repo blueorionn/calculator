@@ -95,7 +95,7 @@ export default function ScientificCalculator() {
                 <MultiplicationButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <FactorialButton />
+                <FactorialButton dispatch={dispatch} />
                 <DigitButton digit={4} dispatch={dispatch} />
                 <DigitButton digit={5} dispatch={dispatch} />
                 <DigitButton digit={6} dispatch={dispatch} />

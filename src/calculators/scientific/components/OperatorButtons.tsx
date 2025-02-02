@@ -101,11 +101,18 @@ export function DivisionButton({
   );
 }
 
-export function FactorialButton() {
+export function FactorialButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() =>
+          dispatch({ type: "INSTANT_OPERATION", payload: "factorial" })
+        }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Factorial</span>
