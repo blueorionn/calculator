@@ -1,5 +1,8 @@
 import { CalculatorState, CalculatorActionType } from "./SharedTypes";
-import { evaluateOperationOutput } from "./lib/CalculatorFunction";
+import {
+  evaluateOperationOutput,
+  isCurrentOperandValidNumber,
+} from "./lib/CalculatorFunction";
 
 export const INITIAL_STATE: CalculatorState = {
   currentOperand: "0",
@@ -56,15 +59,33 @@ export function reducer(
       if (state.currentOperand === "0") return state;
 
       if (action.payload === "square") {
+        // If currentOperand is not a valid number
+        if (isCurrentOperandValidNumber(state))
+          return { ...state, isError: true };
+
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**2`)}`,
         };
       }
       if (action.payload === "cube") {
+        // If currentOperand is not a valid number
+        if (isCurrentOperandValidNumber(state))
+          return { ...state, isError: true };
+        
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**3`)}`,
+        };
+      }
+      if (action.payload === "root") {
+        // If currentOperand is not a valid number
+        if (isCurrentOperandValidNumber(state))
+          return { ...state, isError: true };
+        
+        return {
+          ...state,
+          currentOperand: `${eval(`(${state.currentOperand})**(1/2)`)}`,
         };
       }
 

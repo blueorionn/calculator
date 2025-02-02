@@ -28,3 +28,17 @@ export function evaluateOperationOutput(
     return { ...state, isError: true };
   }
 }
+
+export function isCurrentOperandValidNumber(state: CalculatorState) {
+  try {
+    const converted = parseInt(state.currentOperand);
+
+    if (isNaN(converted)) return false;
+    if (typeof converted === "number") return true;
+  } catch (error) {
+    if (error) return false;
+  }
+
+  // return false by default
+  return false;
+}
