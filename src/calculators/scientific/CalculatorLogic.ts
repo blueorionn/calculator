@@ -72,7 +72,7 @@ export function reducer(
         // If currentOperand is not a valid number
         if (isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
-        
+
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**3`)}`,
@@ -82,7 +82,7 @@ export function reducer(
         // If currentOperand is not a valid number
         if (isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
-        
+
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**(1/2)`)}`,
