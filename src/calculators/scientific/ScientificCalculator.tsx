@@ -88,7 +88,7 @@ export default function ScientificCalculator() {
                 <DivisionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <ReciprocalButton />
+                <ReciprocalButton dispatch={dispatch} />
                 <DigitButton digit={7} dispatch={dispatch} />
                 <DigitButton digit={8} dispatch={dispatch} />
                 <DigitButton digit={9} dispatch={dispatch} />
