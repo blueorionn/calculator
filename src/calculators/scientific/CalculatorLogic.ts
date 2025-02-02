@@ -59,7 +59,7 @@ export function reducer(
     case "INSTANT_OPERATION":
       if (state.currentOperand === "0") return state;
 
-      if (action.payload === "square") {
+      if (action.operation === "square") {
         // If currentOperand is not a valid number
         if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
@@ -69,7 +69,7 @@ export function reducer(
           currentOperand: `${eval(`(${state.currentOperand})**2`)}`,
         };
       }
-      if (action.payload === "cube") {
+      if (action.operation === "cube") {
         // If currentOperand is not a valid number
         if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
@@ -79,7 +79,7 @@ export function reducer(
           currentOperand: `${eval(`(${state.currentOperand})**3`)}`,
         };
       }
-      if (action.payload === "root") {
+      if (action.operation === "root") {
         // If currentOperand is not a valid number
         if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
@@ -89,7 +89,7 @@ export function reducer(
           currentOperand: `${eval(`(${state.currentOperand})**(1/2)`)}`,
         };
       }
-      if (action.payload === "factorial") {
+      if (action.operation === "factorial") {
         // If currentOperand is not a valid number
         if (!isCurrentOperandValidNumber(state))
           return { ...state, isError: true };
@@ -102,7 +102,7 @@ export function reducer(
         if (typeof factOutput === "number")
           return { ...state, currentOperand: `${factOutput}` };
       }
-      if (action.payload === "inverse") {
+      if (action.operation === "inverse") {
         if (state.currentOperand === "0") return state;
 
         // If currentOperand is not a valid number
@@ -120,7 +120,7 @@ export function reducer(
           currentOperand: `${eval(`1/(${currentOperandNumber})`)}`,
         };
       }
-      if (action.payload === "ln") {
+      if (action.operation === "ln") {
         if (state.currentOperand === "0") return state;
 
         // If currentOperand is not a valid number
@@ -137,7 +137,7 @@ export function reducer(
           currentOperand: `${eval(`${Math.log(currentOperandNumber)}`)}`,
         };
       }
-      if (action.payload === "log") {
+      if (action.operation === "log") {
         if (state.currentOperand === "0") return state;
 
         // If currentOperand is not a valid number

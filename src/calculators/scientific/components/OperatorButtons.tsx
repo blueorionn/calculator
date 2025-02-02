@@ -111,7 +111,7 @@ export function FactorialButton({
       <button
         type="button"
         onClick={() =>
-          dispatch({ type: "INSTANT_OPERATION", payload: "factorial" })
+          dispatch({ type: "INSTANT_OPERATION", operation: "factorial" })
         }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
@@ -131,7 +131,7 @@ export function NaturalLogButton({
     <>
       <button
         type="button"
-        onClick={() => dispatch({ type: "INSTANT_OPERATION", payload: "ln" })}
+        onClick={() => dispatch({ type: "INSTANT_OPERATION", operation: "ln" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Natural Log</span>
@@ -150,7 +150,9 @@ export function LogButton({
     <>
       <button
         type="button"
-        onClick={() => dispatch({ type: "INSTANT_OPERATION", payload: "log" })}
+        onClick={() =>
+          dispatch({ type: "INSTANT_OPERATION", operation: "log" })
+        }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className={`${spaceGrotesk.className}`}>log</span>
@@ -169,7 +171,7 @@ export function ReciprocalButton({
       <button
         type="button"
         onClick={() =>
-          dispatch({ type: "INSTANT_OPERATION", payload: "inverse" })
+          dispatch({ type: "INSTANT_OPERATION", operation: "inverse" })
         }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
@@ -216,7 +218,7 @@ export function SquareButton({
       <button
         type="button"
         onClick={() =>
-          dispatch({ type: "INSTANT_OPERATION", payload: "square" })
+          dispatch({ type: "INSTANT_OPERATION", operation: "square" })
         }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
@@ -238,7 +240,9 @@ export function CubeButton({
     <>
       <button
         type="button"
-        onClick={() => dispatch({ type: "INSTANT_OPERATION", payload: "cube" })}
+        onClick={() =>
+          dispatch({ type: "INSTANT_OPERATION", operation: "cube" })
+        }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Cube</span>
@@ -259,7 +263,9 @@ export function SquareRootButton({
     <>
       <button
         type="button"
-        onClick={() => dispatch({ type: "INSTANT_OPERATION", payload: "root" })}
+        onClick={() =>
+          dispatch({ type: "INSTANT_OPERATION", operation: "root" })
+        }
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Square Root</span>

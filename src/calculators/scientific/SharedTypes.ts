@@ -13,7 +13,7 @@ export type CalculatorActionType =
   | { type: "CHOOSE_OPERATION"; payload: "+" | "-" | "*" | "/" | "%" }
   | {
       type: "INSTANT_OPERATION";
-      payload:
+      operation:
         | "square"
         | "cube"
         | "root"
