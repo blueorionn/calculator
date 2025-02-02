@@ -137,6 +137,23 @@ export function reducer(
           currentOperand: `${eval(`${Math.log(currentOperandNumber)}`)}`,
         };
       }
+      if (action.payload === "log") {
+        if (state.currentOperand === "0") return state;
+
+        // If currentOperand is not a valid number
+        if (!isCurrentOperandValidNumber(state))
+          return { ...state, isError: true };
+
+        // converting to number
+        const currentOperandNumber = parseFloat(state.currentOperand);
+        if (currentOperandNumber === 0) return state;
+        if (currentOperandNumber < 0) return { ...state, isError: true };
+
+        return {
+          ...state,
+          currentOperand: `${eval(`${Math.log10(currentOperandNumber)}`)}`,
+        };
+      }
 
       return state;
 
