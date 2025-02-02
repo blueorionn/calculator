@@ -42,3 +42,30 @@ export function isCurrentOperandValidNumber(state: CalculatorState) {
   // return false by default
   return false;
 }
+
+export function factOperation(state: CalculatorState) {
+  if (!isCurrentOperandValidNumber(state)) return null;
+
+  const currentOperand = parseInt(state.currentOperand);
+
+  // number shouldn't be 0
+  if (currentOperand === 0) return null;
+
+  // factorial of negative number is not possible
+  if (currentOperand < 0) return null;
+
+  function fact(num: number): number {
+    // output variable
+    let output = 1;
+
+    // calculate factorial
+    while (num > 1) {
+      output *= num;
+      num--;
+    }
+
+    return output;
+  }
+
+  return fact(currentOperand);
+}
