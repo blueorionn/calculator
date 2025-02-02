@@ -46,7 +46,7 @@ export function isCurrentOperandValidNumber(state: CalculatorState) {
 export function factOperation(state: CalculatorState) {
   if (!isCurrentOperandValidNumber(state)) return null;
 
-  const currentOperand = parseInt(state.currentOperand);
+  const currentOperand = parseFloat(state.currentOperand);
 
   // number shouldn't be 0
   if (currentOperand === 0) return null;
