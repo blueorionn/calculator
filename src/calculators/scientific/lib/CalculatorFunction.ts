@@ -31,7 +31,7 @@ export function evaluateOperationOutput(
 
 export function isCurrentOperandValidNumber(state: CalculatorState) {
   try {
-    const converted = parseInt(state.currentOperand);
+    const converted = parseFloat(state.currentOperand);
 
     if (isNaN(converted)) return false;
     if (typeof converted === "number") return true;

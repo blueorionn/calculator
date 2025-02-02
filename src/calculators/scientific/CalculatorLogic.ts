@@ -110,7 +110,7 @@ export function reducer(
           return { ...state, isError: true };
 
         // converting to number
-        const currentOperandNumber = parseInt(state.currentOperand);
+        const currentOperandNumber = parseFloat(state.currentOperand);
         if (currentOperandNumber === 0) return state;
         if (currentOperandNumber < 0) return { ...state, isError: true };
 
