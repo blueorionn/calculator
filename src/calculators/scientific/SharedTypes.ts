@@ -11,7 +11,17 @@ export type CalculatorActionType =
   | { type: "ADD_DIGIT"; payload: number }
   | { type: "ADD_PERIOD" }
   | { type: "CHOOSE_OPERATION"; payload: "+" | "-" | "*" | "/" | "%" }
-  | { type: "INSTANT_OPERATION"; payload: "square" | "cube" | "root" }
+  | {
+      type: "INSTANT_OPERATION";
+      payload:
+        | "square"
+        | "cube"
+        | "root"
+        | "inverse"
+        | "factorial"
+        | "ln"
+        | "log";
+    }
   | { type: "ADD_CONSTANT"; payload: "e" | "pi" }
   | { type: "SET_ANGLE"; payload: "rad" | "deg" }
   | { type: "CLEAR_ALL" }
