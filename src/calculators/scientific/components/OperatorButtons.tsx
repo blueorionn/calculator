@@ -122,11 +122,16 @@ export function FactorialButton({
   );
 }
 
-export function NaturalLogButton() {
+export function NaturalLogButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "INSTANT_OPERATION", payload: "ln" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Natural Log</span>
@@ -136,11 +141,16 @@ export function NaturalLogButton() {
   );
 }
 
-export function LogButton() {
+export function LogButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "INSTANT_OPERATION", payload: "log" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className={`${spaceGrotesk.className}`}>log</span>

@@ -102,14 +102,14 @@ export default function ScientificCalculator() {
                 <SubtractionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <NaturalLogButton />
+                <NaturalLogButton dispatch={dispatch} />
                 <DigitButton digit={1} dispatch={dispatch} />
                 <DigitButton digit={2} dispatch={dispatch} />
                 <DigitButton digit={3} dispatch={dispatch} />
                 <AdditionButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <LogButton />
+                <LogButton dispatch={dispatch} />
                 <ModuloButton dispatch={dispatch} />
                 <DigitButton digit={0} dispatch={dispatch} />
                 <PeriodButton dispatch={dispatch} />
