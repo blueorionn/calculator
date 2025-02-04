@@ -77,7 +77,7 @@ export default function ScientificCalculator() {
                 <SinButton state={state} dispatch={dispatch} />
                 <CosButton state={state} />
                 <TanButton state={state} />
-                <button type="button">MOD</button>
+                <ClearAllButton dispatch={dispatch} />
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <PiButton dispatch={dispatch} />
@@ -89,7 +89,7 @@ export default function ScientificCalculator() {
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <ParenthesisLeft />
                 <ParenthesisRight />
-                <ClearAllButton dispatch={dispatch} />
+                <button type="button">C</button>
                 <DeleteButton dispatch={dispatch} />
                 <DivisionButton dispatch={dispatch} />
               </div>
