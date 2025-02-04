@@ -63,11 +63,22 @@ export function ReverseTrigButton({
   );
 }
 
-export function SinButton({ state }: { state: CalculatorState }) {
+export function SinButton({
+  state,
+  dispatch,
+}: {
+  state: CalculatorState;
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => {
+          if (!state.isTrigInverse) {
+            dispatch({ type: "TRIG_OPERATION", operation: "sin" });
+          }
+        }}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Sin and Cosecant Button</span>

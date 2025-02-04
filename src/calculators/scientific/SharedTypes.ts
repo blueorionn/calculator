@@ -26,6 +26,10 @@ export type CalculatorActionType =
   | { type: "ADD_CONSTANT"; payload: "e" | "pi" }
   | { type: "SET_ANGLE"; payload: "rad" | "deg" }
   | { type: "SET_TRIG_INVERSE"; payload: boolean }
+  | {
+      type: "TRIG_OPERATION";
+      operation: "sin" | "cos" | "tan" | "cosec" | "sec" | "cot";
+    }
   | { type: "CLEAR_ALL" }
   | { type: "DELETE" }
   | { type: "EVALUATE" };

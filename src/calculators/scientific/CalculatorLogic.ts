@@ -174,6 +174,20 @@ export function reducer(
     case "SET_TRIG_INVERSE":
       return { ...state, isTrigInverse: action.payload };
 
+    case "TRIG_OPERATION":
+      if (state.currentOperand === "0") return state;
+      if (!isCurrentOperandValidNumber(state))
+        return { ...state, isError: true };
+
+      if (action.operation === "sin") {
+        return {
+          ...state,
+          currentOperand: `${Math.sin(parseFloat(state.currentOperand))}`,
+        };
+      }
+
+      return state;
+
     case "DELETE":
       // If currentOperand is already 0 return state
       if (state.currentOperand === "0") return state;
