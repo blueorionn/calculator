@@ -40,6 +40,25 @@ export function ClearAllButton({
   );
 }
 
+export function ClearButton({
+  dispatch,
+}: {
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => dispatch({ type: "CLEAR" })}
+        className="bg-gray-700 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
+      >
+        <span className="sr-only">clear</span>
+        <span className={`${spaceGrotesk.className}`}>C</span>
+      </button>
+    </>
+  );
+}
+
 export function DeleteButton({
   dispatch,
 }: {

@@ -30,6 +30,7 @@ export type CalculatorActionType =
       type: "TRIG_OPERATION";
       operation: "sin" | "cos" | "tan" | "cosec" | "sec" | "cot";
     }
+  | { type: "CLEAR" }
   | { type: "CLEAR_ALL" }
   | { type: "DELETE" }
   | { type: "EVALUATE" };

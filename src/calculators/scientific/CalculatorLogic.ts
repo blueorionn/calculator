@@ -168,6 +168,9 @@ export function reducer(
         currentOperand: `${state.currentOperand.slice(0, -1)}`,
       };
 
+    case "CLEAR":
+      return { ...state, currentOperand: "0" };
+
     case "CLEAR_ALL":
       return INITIAL_STATE;
 

@@ -21,6 +21,7 @@ import {
   EvaluateButton,
   ClearAllButton,
   DeleteButton,
+  ClearButton,
 } from "./components/FunctionButton";
 import {
   PiButton,
@@ -89,7 +90,7 @@ export default function ScientificCalculator() {
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <ParenthesisLeft />
                 <ParenthesisRight />
-                <button type="button">C</button>
+                <ClearButton dispatch={dispatch} />
                 <DeleteButton dispatch={dispatch} />
                 <DivisionButton dispatch={dispatch} />
               </div>
