@@ -63,7 +63,7 @@ export function ReverseTrigButton({
   );
 }
 
-export function SinButton() {
+export function SinButton({ state }: { state: CalculatorState }) {
   return (
     <>
       <button
@@ -71,13 +71,22 @@ export function SinButton() {
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Sin and Cosecant Button</span>
-        <span className={`${roboto.className}`}>Sin</span>
+        <span
+          className={`${roboto.className} ${state.isTrigInverse ? "hidden" : "block"}`}
+        >
+          Sin
+        </span>
+        <span
+          className={`${roboto.className} ${state.isTrigInverse ? "block" : "hidden"}`}
+        >
+          Sin <sup>-1</sup>
+        </span>
       </button>
     </>
   );
 }
 
-export function CosButton() {
+export function CosButton({ state }: { state: CalculatorState }) {
   return (
     <>
       <button
@@ -85,13 +94,22 @@ export function CosButton() {
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Cosine and Secant Button</span>
-        <span className={`${roboto.className}`}>Cos</span>
+        <span
+          className={`${roboto.className} ${state.isTrigInverse ? "hidden" : "block"}`}
+        >
+          Cos
+        </span>
+        <span
+          className={`${roboto.className} ${state.isTrigInverse ? "block" : "hidden"}`}
+        >
+          Cos <sup>-1</sup>
+        </span>
       </button>
     </>
   );
 }
 
-export function TanButton() {
+export function TanButton({ state }: { state: CalculatorState }) {
   return (
     <>
       <button
@@ -99,7 +117,16 @@ export function TanButton() {
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Tangent and Cotangent Button</span>
-        <span className={`${roboto.className}`}>Tan</span>
+        <span
+          className={`${roboto.className} ${state.isTrigInverse ? "hidden" : "block"}`}
+        >
+          Tan
+        </span>
+        <span
+          className={`${roboto.className} ${state.isTrigInverse ? "block" : "hidden"}`}
+        >
+          Tan <sup>-1</sup>
+        </span>
       </button>
     </>
   );

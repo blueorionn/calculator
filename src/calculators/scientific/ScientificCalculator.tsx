@@ -74,9 +74,9 @@ export default function ScientificCalculator() {
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
                 <ReverseTrigButton state={state} dispatch={dispatch} />
-                <SinButton />
-                <CosButton />
-                <TanButton />
+                <SinButton state={state} />
+                <CosButton state={state} />
+                <TanButton state={state} />
                 <button type="button">MOD</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
