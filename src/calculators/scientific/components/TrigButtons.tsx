@@ -57,7 +57,7 @@ export function ReverseTrigButton({
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Reverse Trig Function</span>
-        <span className={`${roboto.className}`}>2nd</span>
+        <span className={`${roboto.className}`}>Inv</span>
       </button>
     </>
   );
