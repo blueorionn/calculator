@@ -59,42 +59,28 @@ export function reducer(
 
     case "INSTANT_OPERATION":
       if (state.currentOperand === "0") return state;
+      if (!isCurrentOperandValidNumber(state))
+        return { ...state, isError: true };
 
       if (action.operation === "square") {
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**2`)}`,
         };
       }
       if (action.operation === "cube") {
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**3`)}`,
         };
       }
       if (action.operation === "root") {
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         return {
           ...state,
           currentOperand: `${eval(`(${state.currentOperand})**(1/2)`)}`,
         };
       }
       if (action.operation === "factorial") {
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         // factorial output
         const factOutput = factOperation(state);
 
@@ -104,12 +90,6 @@ export function reducer(
           return { ...state, currentOperand: `${factOutput}` };
       }
       if (action.operation === "inverse") {
-        if (state.currentOperand === "0") return state;
-
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         // converting to number
         const currentOperandNumber = parseFloat(state.currentOperand);
         if (currentOperandNumber === 0) return state;
@@ -122,12 +102,6 @@ export function reducer(
         };
       }
       if (action.operation === "ln") {
-        if (state.currentOperand === "0") return state;
-
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         // converting to number
         const currentOperandNumber = parseFloat(state.currentOperand);
         if (currentOperandNumber === 0) return state;
@@ -139,12 +113,6 @@ export function reducer(
         };
       }
       if (action.operation === "log") {
-        if (state.currentOperand === "0") return state;
-
-        // If currentOperand is not a valid number
-        if (!isCurrentOperandValidNumber(state))
-          return { ...state, isError: true };
-
         // converting to number
         const currentOperandNumber = parseFloat(state.currentOperand);
         if (currentOperandNumber === 0) return state;
