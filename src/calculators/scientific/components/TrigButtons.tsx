@@ -36,11 +36,24 @@ export function AngleButton({
   );
 }
 
-export function ReverseTrigButton() {
+export function ReverseTrigButton({
+  state,
+  dispatch,
+}: {
+  state: CalculatorState;
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => {
+          if (state.isTrigInverse) {
+            dispatch({ type: "SET_TRIG_INVERSE", payload: false });
+          } else {
+            dispatch({ type: "SET_TRIG_INVERSE", payload: true });
+          }
+        }}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Reverse Trig Function</span>

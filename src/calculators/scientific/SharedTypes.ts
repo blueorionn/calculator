@@ -4,6 +4,7 @@ export interface CalculatorState {
   operation: string | null;
   memory: string;
   angle: "deg" | "rad";
+  isTrigInverse: boolean;
   isError: boolean;
 }
 
@@ -24,6 +25,7 @@ export type CalculatorActionType =
     }
   | { type: "ADD_CONSTANT"; payload: "e" | "pi" }
   | { type: "SET_ANGLE"; payload: "rad" | "deg" }
+  | { type: "SET_TRIG_INVERSE"; payload: boolean }
   | { type: "CLEAR_ALL" }
   | { type: "DELETE" }
   | { type: "EVALUATE" };

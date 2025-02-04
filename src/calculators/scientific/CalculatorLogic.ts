@@ -11,6 +11,7 @@ export const INITIAL_STATE: CalculatorState = {
   operation: null,
   memory: "0",
   angle: "deg",
+  isTrigInverse: false,
   isError: false,
 };
 
@@ -169,6 +170,9 @@ export function reducer(
 
     case "SET_ANGLE":
       return { ...state, angle: action.payload };
+
+    case "SET_TRIG_INVERSE":
+      return { ...state, isTrigInverse: action.payload };
 
     case "DELETE":
       // If currentOperand is already 0 return state
