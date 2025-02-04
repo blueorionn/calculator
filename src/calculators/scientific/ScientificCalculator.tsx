@@ -28,7 +28,13 @@ import {
   ParenthesisLeft,
   ParenthesisRight,
 } from "./components/ConstantButtons";
-import { AngleButton } from "./components/TrigButtons";
+import {
+  AngleButton,
+  CosButton,
+  ReverseTrigButton,
+  SinButton,
+  TanButton,
+} from "./components/TrigButtons";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -67,10 +73,10 @@ export default function ScientificCalculator() {
                 <button type="button">MC</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
-                <button type="button">2nd</button>
-                <button type="button">SIN</button>
-                <button type="button">COS</button>
-                <button type="button">TAN</button>
+                <ReverseTrigButton />
+                <SinButton />
+                <CosButton />
+                <TanButton />
                 <button type="button">MOD</button>
               </div>
               <div aria-label="row_one" className="grid grid-cols-5 gap-2.5">
