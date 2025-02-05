@@ -15,7 +15,7 @@ export function ClearButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "CLEAR" })}
-        className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
+        className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
       >
         <span className="sr-only">clear</span>
         <span className={`${spaceGrotesk.className}`}>C</span>
@@ -34,7 +34,7 @@ export function ClearAllButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "CLEAR_ALL" })}
-        className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
+        className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
       >
         <span className="sr-only">clear all</span>
         <span className={`${spaceGrotesk.className}`}>AC</span>
@@ -82,7 +82,7 @@ export function EvaluateButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "EVALUATE" })}
-        className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
+        className="bg-sky-700 flex justify-center items-center rounded-sm py-4 hover:bg-sky-800 transition-all duration-100"
       >
         <span className="sr-only">Evaluate</span>
         <span className={`${spaceGrotesk.className} text-2xl text-gray-100`}>
