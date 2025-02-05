@@ -20,6 +20,7 @@ export function AdditionButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "CHOOSE_OPERATION", payload: "+" })}
+        data-btn-operator="add"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Addition</span>
@@ -44,6 +45,7 @@ export function SubtractionButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "CHOOSE_OPERATION", payload: "-" })}
+        data-btn-operator="sub"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Subtraction</span>
@@ -68,6 +70,7 @@ export function MultiplicationButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "CHOOSE_OPERATION", payload: "*" })}
+        data-btn-operator="mul"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Multiplication</span>
@@ -92,6 +95,7 @@ export function DivisionButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "CHOOSE_OPERATION", payload: "/" })}
+        data-btn-operator="div"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Division</span>
@@ -111,6 +115,7 @@ export function PlusMinusButton({
       <button
         type="button"
         onClick={() => dispatch({ type: "PLUS_MINUS" })}
+        data-btn-operator="plus-minus"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Plus Minus</span>

@@ -21,8 +21,8 @@ export function DigitButton({
     <>
       <button
         type="button"
-        aria-label={`${digit}`}
         onClick={() => dispatch({ type: "ADD_DIGIT", payload: digit })}
+        data-btn-digit={`${digit}`}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className={`${spaceGrotesk.className}`}>{digit}</span>
