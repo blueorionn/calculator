@@ -108,7 +108,11 @@ export function CosButton({
     <>
       <button
         type="button"
-        onClick={() => dispatch({ type: "TRIG_OPERATION", operation: "cos" })}
+        onClick={() => {
+          if (!state.isTrigInverse) {
+            dispatch({ type: "TRIG_OPERATION", operation: "cos" });
+          }
+        }}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Cosine and Secant Button</span>
@@ -138,7 +142,11 @@ export function TanButton({
     <>
       <button
         type="button"
-        onClick={() => dispatch({ type: "TRIG_OPERATION", operation: "tan" })}
+        onClick={() => {
+          if (!state.isTrigInverse) {
+            dispatch({ type: "TRIG_OPERATION", operation: "tan" });
+          }
+        }}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Tangent and Cotangent Button</span>
