@@ -16,6 +16,7 @@ export function ClearButton({
         type="button"
         onClick={() => dispatch({ type: "CLEAR" })}
         data-btn-function="clear"
+        aria-labelledby="clear"
         className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
       >
         <span className="sr-only">clear</span>
@@ -36,6 +37,7 @@ export function ClearAllButton({
         type="button"
         onClick={() => dispatch({ type: "CLEAR_ALL" })}
         data-btn-function="clear-all"
+        aria-labelledby="clear-all"
         className="bg-gray-800 flex justify-center items-center rounded-sm py-4 hover:bg-gray-900 transition-all duration-100"
       >
         <span className="sr-only">clear all</span>
@@ -58,6 +60,7 @@ export function DeleteButton({
         type="button"
         onClick={() => dispatch({ type: "DELETE" })}
         data-btn-function="delete"
+        aria-labelledby="delete"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Delete button</span>
@@ -86,6 +89,7 @@ export function EvaluateButton({
         type="button"
         onClick={() => dispatch({ type: "EVALUATE" })}
         data-btn-function="eval"
+        aria-labelledby="eval"
         className="bg-sky-700 flex justify-center items-center rounded-sm py-4 hover:bg-sky-800 transition-all duration-100"
       >
         <span className="sr-only">Evaluate</span>
