@@ -3,6 +3,7 @@ import {
   evaluateOperationOutput,
   isCurrentOperandValidNumber,
   factOperation,
+  evaluateTrigOperation,
 } from "./lib/CalculatorFunction";
 
 export const INITIAL_STATE: CalculatorState = {
@@ -147,14 +148,7 @@ export function reducer(
       if (!isCurrentOperandValidNumber(state))
         return { ...state, isError: true };
 
-      if (action.operation === "sin") {
-        return {
-          ...state,
-          currentOperand: `${Math.sin(parseFloat(state.currentOperand))}`,
-        };
-      }
-
-      return state;
+      return evaluateTrigOperation(state, action.operation);
 
     case "DELETE":
       // If currentOperand is already 0 return state

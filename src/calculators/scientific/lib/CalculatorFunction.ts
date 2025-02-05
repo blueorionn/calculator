@@ -69,3 +69,57 @@ export function factOperation(state: CalculatorState) {
 
   return fact(currentOperand);
 }
+
+export function evaluateTrigOperation(
+  state: CalculatorState,
+  operation: "sin" | "cos" | "tan" | "cosec" | "sec" | "cot"
+): CalculatorState {
+  if (!isCurrentOperandValidNumber(state)) return { ...state, isError: true };
+
+  /**
+   * Convert Degree to Radian
+   * @param degree
+   * @returns {number}
+   */
+  function convertDegreeToRadian(degree: number) {
+    return degree * (Math.PI / 180);
+  }
+
+  /**
+   * Convert Radian to Degree
+   * @param radian
+   * @returns {number}
+   */
+  function convertRadianToDegree(radian: number) {
+    return (radian * 180) / Math.PI;
+  }
+
+  let angle: number = 0;
+
+  if (state.angle === "deg") {
+    angle = convertDegreeToRadian(parseFloat(state.currentOperand));
+  } else if (state.angle === "rad") {
+    angle = parseFloat(state.currentOperand);
+  }
+
+  // Doing trig operation
+  if (operation === "sin") {
+    return { ...state, currentOperand: `${Math.sin(angle)}` };
+  } else if (operation === "cos") {
+    return { ...state, currentOperand: `${Math.cos(angle)}` };
+  } else if (operation === "tan") {
+    return { ...state, currentOperand: `${Math.tan(angle)}` };
+  }
+
+  // Doing inverse trig operation
+  if (operation === "cosec") {
+    if (state.angle === "deg") {
+      return {
+        ...state,
+        currentOperand: `${convertRadianToDegree(Math.asin(angle)) || ""}`,
+      };
+    }
+  }
+
+  return state;
+}
