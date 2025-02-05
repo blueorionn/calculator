@@ -34,6 +34,7 @@ export default function BasicCalculator() {
               <div className="w-full p-2.5">
                 <span
                   className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-base font-semibold mx-auto`}
+                  id="calculator-historyOperation"
                 >
                   {state.previousOperand} {state.operation}
                 </span>
@@ -42,6 +43,7 @@ export default function BasicCalculator() {
                 <span
                   className={`${spaceGrotesk.className} inline-block w-full text-right cursor-default text-lg font-bold overflow-auto`}
                   style={{ scrollbarWidth: "none" }}
+                  id="calculator-currentOperand"
                 >
                   {state.currentOperand}
                 </span>
