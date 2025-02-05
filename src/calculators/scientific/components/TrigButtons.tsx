@@ -97,11 +97,18 @@ export function SinButton({
   );
 }
 
-export function CosButton({ state }: { state: CalculatorState }) {
+export function CosButton({
+  state,
+  dispatch,
+}: {
+  state: CalculatorState;
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "TRIG_OPERATION", operation: "cos" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Cosine and Secant Button</span>
@@ -120,11 +127,18 @@ export function CosButton({ state }: { state: CalculatorState }) {
   );
 }
 
-export function TanButton({ state }: { state: CalculatorState }) {
+export function TanButton({
+  state,
+  dispatch,
+}: {
+  state: CalculatorState;
+  dispatch: ActionDispatch<[action: CalculatorActionType]>;
+}) {
   return (
     <>
       <button
         type="button"
+        onClick={() => dispatch({ type: "TRIG_OPERATION", operation: "tan" })}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">Tangent and Cotangent Button</span>
