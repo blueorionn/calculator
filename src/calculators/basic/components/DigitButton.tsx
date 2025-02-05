@@ -23,7 +23,7 @@ export function DigitButton({
         type="button"
         onClick={() => dispatch({ type: "ADD_DIGIT", payload: digit })}
         data-btn-digit={`${digit}`}
-        aria-labelledby={`${digit}`}
+        data-testid={`${digit}`}
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className={`${spaceGrotesk.className}`}>{digit}</span>
@@ -47,7 +47,7 @@ export function PeriodButton({
         type="button"
         onClick={() => dispatch({ type: "ADD_PERIOD" })}
         data-btn-digit="period"
-        aria-labelledby="period"
+        data-testid="period"
         className="bg-gray-900 flex justify-center items-center rounded-sm py-4 hover:bg-gray-800 transition-all duration-100"
       >
         <span className="sr-only">period</span>
