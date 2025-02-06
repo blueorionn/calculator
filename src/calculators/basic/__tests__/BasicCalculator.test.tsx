@@ -130,3 +130,39 @@ describe("Test Operations", () => {
     );
   });
 });
+
+describe("Test Period and Zero Button", () => {
+  it("Test for period button when CurrentOperand is Zero", () => {
+    render(<BasicCalculator />);
+
+    fireEvent.click(screen.getByTestId("period"));
+    fireEvent.click(screen.getByTestId("0"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0.0"
+    );
+  });
+
+  it("Test for period button when period is present in currentOperand", () => {
+    render(<BasicCalculator />);
+    fireEvent.click(screen.getByTestId("period"));
+    fireEvent.click(screen.getByTestId("0"));
+    // Clicking period button after it has already been clicked previously
+    fireEvent.click(screen.getByTestId("period"));
+    fireEvent.click(screen.getByTestId("period"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0.0"
+    );
+  });
+
+  it("Test for repeating zero button firing when no other number is present", () => {
+    render(<BasicCalculator />);
+    fireEvent.click(screen.getByTestId("0"));
+    fireEvent.click(screen.getByTestId("0"));
+    fireEvent.click(screen.getByTestId("0"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0"
+    );
+  });
+});
