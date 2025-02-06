@@ -36,7 +36,7 @@ export function SubtractionButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useCalculatorKeyboard("+", dispatch, {
+  useCalculatorKeyboard("-", dispatch, {
     type: "CHOOSE_OPERATION",
     payload: "-",
   });
@@ -62,7 +62,7 @@ export function MultiplicationButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useCalculatorKeyboard("+", dispatch, {
+  useCalculatorKeyboard("*", dispatch, {
     type: "CHOOSE_OPERATION",
     payload: "*",
   });
@@ -88,7 +88,7 @@ export function DivisionButton({
 }: {
   dispatch: ActionDispatch<[action: CalculatorActionType]>;
 }) {
-  useCalculatorKeyboard("+", dispatch, {
+  useCalculatorKeyboard("/", dispatch, {
     type: "CHOOSE_OPERATION",
     payload: "/",
   });
