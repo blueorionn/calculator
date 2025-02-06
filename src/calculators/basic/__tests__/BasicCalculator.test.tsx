@@ -166,3 +166,90 @@ describe("Test Period and Zero Button", () => {
     );
   });
 });
+
+describe("Test special buttons function", () => {
+  it("Test Delete button", () => {
+    render(<BasicCalculator />);
+
+    // 12
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("2"));
+
+    fireEvent.click(screen.getByTestId("delete"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "1"
+    );
+
+    fireEvent.click(screen.getByTestId("delete"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0"
+    );
+  });
+
+  it("Test clear button", () => {
+    render(<BasicCalculator />);
+
+    // 10
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("0"));
+
+    fireEvent.click(screen.getByTestId("clear"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0"
+    );
+
+    // 10
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("0"));
+    // add
+    fireEvent.click(screen.getByTestId("add"));
+    // 5
+    fireEvent.click(screen.getByTestId("5"));
+    fireEvent.click(screen.getByTestId("clear"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0"
+    );
+    expect(screen.getByTestId("calculator-historyOperation").textContent).toBe(
+      "10 +"
+    );
+  });
+
+  it("Test clear all button", () => {
+    render(<BasicCalculator />);
+
+    // 10
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("0"));
+    // add
+    fireEvent.click(screen.getByTestId("add"));
+    // 5
+    fireEvent.click(screen.getByTestId("5"));
+    fireEvent.click(screen.getByTestId("clear-all"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "0"
+    );
+    expect(screen.getByTestId("calculator-historyOperation").textContent).toBe(
+      "0 "
+    );
+  });
+
+  it("Test Evaluate button", () => {
+    render(<BasicCalculator />);
+
+    // 10
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("0"));
+    // add
+    fireEvent.click(screen.getByTestId("add"));
+    // 5
+    fireEvent.click(screen.getByTestId("5"));
+    fireEvent.click(screen.getByTestId("eval"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "15"
+    );
+    expect(screen.getByTestId("calculator-historyOperation").textContent).toBe(
+      "0 "
+    );
+  });
+});
