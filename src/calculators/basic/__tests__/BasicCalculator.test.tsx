@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import BasicCalculator from "../BasicCalculator";
 
 describe("Test for component visibility in document", () => {
@@ -41,7 +41,16 @@ describe("Test for component visibility in document", () => {
 });
 
 describe("Test Operations", () => {
-  it("Test addition operation", () => {
+  it("Test basic addition operation", () => {
     render(<BasicCalculator />);
+
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("add"));
+    fireEvent.click(screen.getByTestId("2"));
+    fireEvent.click(screen.getByTestId("eval"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "3"
+    );
   });
 });
