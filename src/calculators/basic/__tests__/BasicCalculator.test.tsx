@@ -45,12 +45,88 @@ describe("Test Operations", () => {
     render(<BasicCalculator />);
 
     fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("1"));
     fireEvent.click(screen.getByTestId("add"));
     fireEvent.click(screen.getByTestId("2"));
     fireEvent.click(screen.getByTestId("eval"));
 
     expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
-      "3"
+      "13"
+    );
+  });
+
+  it("Test basic subtraction opreation", () => {
+    render(<BasicCalculator />);
+
+    // 123
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("2"));
+    fireEvent.click(screen.getByTestId("3"));
+    // subtraction
+    fireEvent.click(screen.getByTestId("sub"));
+    // 23
+    fireEvent.click(screen.getByTestId("2"));
+    fireEvent.click(screen.getByTestId("3"));
+    // eval
+    fireEvent.click(screen.getByTestId("eval"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "100"
+    );
+  });
+
+  it("Test basic multiplication operation", () => {
+    render(<BasicCalculator />);
+
+    // 12
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("2"));
+    // multiplication
+    fireEvent.click(screen.getByTestId("mul"));
+    // 2
+    fireEvent.click(screen.getByTestId("2"));
+    // eval
+    fireEvent.click(screen.getByTestId("eval"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "24"
+    );
+  });
+
+  it("Test basic division operation", () => {
+    render(<BasicCalculator />);
+
+    // 15
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("5"));
+    // division
+    fireEvent.click(screen.getByTestId("div"));
+    // 2
+    fireEvent.click(screen.getByTestId("2"));
+    // eval
+    fireEvent.click(screen.getByTestId("eval"));
+
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "7.5"
+    );
+  });
+
+  it("Test plus minus operation", () => {
+    render(<BasicCalculator />);
+
+    // 1.5
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("period"));
+    fireEvent.click(screen.getByTestId("5"));
+
+    fireEvent.click(screen.getByTestId("plus-minus"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "-1.5"
+    );
+
+    fireEvent.click(screen.getByTestId("plus-minus"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "1.5"
     );
   });
 });
