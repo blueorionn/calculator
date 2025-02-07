@@ -34,8 +34,8 @@ export default function Home() {
             <p className="text-lg leading-7 font-medium text-gray-400">
               The Calculator App is a multi-functional web application built
               with Next.js to demonstrate my skills in modern web development.
-              It includes various calculators, such as basic, scientific,
-              financial, and BMI calculators, designed to cater to diverse user
+              It includes various calculators, such as basic, scientific, Unit
+              Converter, and BMI calculators, designed to cater to diverse user
               needs. This project highlights clean design, responsive UI, and
               efficient client-side calculations, making it a practical and
               polished showcase of my work.
@@ -84,24 +84,24 @@ export default function Home() {
               </span>
             </Link>
             <Link
-              href={"/financial"}
+              href={"/bmi"}
               className="group w-full p-4 flex gap-2.5 items-end border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 -960 960 960"
+                viewBox="0 0 512 512"
                 className="h-4 w-4 lg:h-6 lg:w-6 aspect-auto fill-gray-200"
               >
-                <path d="M320-414v-306h120v306l-60-56-60 56Zm200 60v-526h120v406L520-354ZM120-216v-344h120v224L120-216Zm0 98 258-258 142 122 224-224h-64v-80h200v200h-80v-64L524-146 382-268 232-118H120Z" />
+                <path d="M432 32H80a48.05 48.05 0 00-48 48v352a48.05 48.05 0 0048 48h352a48.05 48.05 0 0048-48V80a48.05 48.05 0 00-48-48zm-16.71 165l-52.46 61.73a27.83 27.83 0 01-37.65 4.62c-13-9.29-39.27-24.89-69.18-24.89s-56.18 15.6-69.18 24.89a27.84 27.84 0 01-37.65-4.62L96.71 197a32.12 32.12 0 01.42-42c18.93-21.31 72.3-70.87 158.87-70.87S395.94 133.72 414.87 155a32.12 32.12 0 01.42 42z" />
               </svg>
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
-                financial
+                BMI
               </span>
             </Link>
             <Link
-              href={"/bmi"}
+              href={"/unit-converter"}
               className="group w-full p-4 flex gap-2.5 items-end border-2 rounded-md border-gray-800 hover:border-gray-700 bg-gray-900 hover:bg-gray-800 transition-all duration-300"
             >
               <svg
@@ -114,7 +114,7 @@ export default function Home() {
               <span
                 className={`${spaceGrotesk.className} uppercase text-gray-200 group-hover:text-gray-100 transition-all`}
               >
-                length
+                Unit Converter
               </span>
             </Link>
           </div>
