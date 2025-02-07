@@ -253,3 +253,44 @@ describe("Test special buttons function", () => {
     );
   });
 });
+
+describe("Test for multiple combined operation", () => {
+  it("Test for all 4 arithmetic operation", () => {
+    render(<BasicCalculator />);
+
+    // 10
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("0"));
+
+    // *2
+    fireEvent.click(screen.getByTestId("mul"));
+    fireEvent.click(screen.getByTestId("2"));
+
+    // -10.5
+    fireEvent.click(screen.getByTestId("sub"));
+    fireEvent.click(screen.getByTestId("1"));
+    fireEvent.click(screen.getByTestId("0"));
+    fireEvent.click(screen.getByTestId("period"));
+    fireEvent.click(screen.getByTestId("5"));
+
+    // +35.7
+    fireEvent.click(screen.getByTestId("add"));
+    fireEvent.click(screen.getByTestId("3"));
+    fireEvent.click(screen.getByTestId("5"));
+    fireEvent.click(screen.getByTestId("period"));
+    fireEvent.click(screen.getByTestId("7"));
+
+    // ÷2
+    fireEvent.click(screen.getByTestId("div"));
+    fireEvent.click(screen.getByTestId("2"));
+
+    // eval
+    fireEvent.click(screen.getByTestId("eval"));
+    expect(screen.getByTestId("calculator-currentOperand").textContent).toBe(
+      "22.6"
+    );
+    expect(screen.getByTestId("calculator-historyOperation").textContent).toBe(
+      "0 "
+    );
+  });
+});
